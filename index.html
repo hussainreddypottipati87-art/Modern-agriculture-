@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Agriculture Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+         
+        }
+
+               nav {
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+                .hero {
+            background: linear-gradient(135deg, #1b5e20, #388e3c);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: changeImage 25s infinite;
+}
+
+.background-image img:nth-child(1) { animation-delay: 0s; }
+.background-image img:nth-child(2) { animation-delay: 5s; }
+.background-image img:nth-child(3) { animation-delay: 10s; }
+.background-image img:nth-child(4) { animation-delay: 15s; }
+.background-image img:nth-child(5) { animation-delay: 20s; }
+
+@keyframes changeImage {
+    0%   { opacity: 1; }
+    20%  { opacity: 1; }
+    40%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s;
+        }
+
+               .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+               section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #43a047;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+       
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .tech-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .tech-card h3 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .tech-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+               .sensors-demo {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .sensor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .sensor-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .sensor-box .icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sensor-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2e7d32;
+            margin: 0.5rem 0;
+        }
+
+        .sensor-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+              .ai-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ai-feature {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #43a047;
+        }
+
+        .ai-feature h4 {
+            color: #1b5e20;
+            margin-bottom: 0.5rem;
+        }
+
+        
+        .automation-demo {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .control-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .control-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .toggle {
+            width: 60px;
+            height: 30px;
+            background: #ccc;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle.active {
+            background: green;
+        }
+
+        .toggle::after {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+
+        .toggle.active::after {
+            transform: translateX(30px);
+        }
+
+                .chart-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 300px;
+            border-left: 2px solid #333;
+            border-bottom: 2px solid #333;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, #43a047, #66bb6a);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: height 0.5s;
+            cursor: pointer;
+        }
+
+        .bar:hover {
+            background: linear-gradient(to top, #2e7d32, #43a047);
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        
+        .benefits {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .benefit-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+        }
+
+               footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+                @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+              @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#iot">IoT Sensors</a></li>
+            <li><a href="#ai">AI & ML</a></li>
+            <li><a href="#automation">Automation</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <h1>🌾 Modern Agriculture Technology</h1>
+        <p>Transforming farming with IoT, AI, automation, and data analytics for sustainable and efficient food production</p>
+    </div>
+ <div class="background-image">
+    <img src="C:/Users/pavan/OneDrive/Desktop/PHOTOS/hussain reddy/farmer.jpg" alt="background-imge1">
+    <img src="C:/Users/pavan/OneDrive/Desktop/PHOTOS/hussain reddy/agrictular.jpg" alt="background-imge2">
+    <img src="C:/Users/pavan/OneDrive/Desktop/PHOTOS/hussain reddy/agrictular2.jpg" alt="background-imge3">
+    <img src="C:/Users/pavan/OneDrive/Desktop/PHOTOS/hussain reddy/agriatular3.png" alt="background-imge4">
+    <img src="C:/Users/pavan/OneDrive/Desktop/PHOTOS/hussain reddy/agrictular4.jpeg" alt="background-imge5">
+</div>
+ 
+     <!-- Main Container -->
+    <div class="container">
+        <!-- Technologies Section -->
+        <section id="technologies">
+            <h2>Agricultural Technologies</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">🛰</span>
+                    <h3>Precision Agriculture</h3>
+                    <p>GPS-guided equipment and sensors optimize field operations, reducing waste and maximizing yields through data-driven decisions.</p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🚁</span>
+                    <h3>Drone Technology</h3>
+                    <p>Aerial surveillance, crop monitoring, precision spraying, and field mapping with real-time imaging and analysis.</p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🤖</span>
+                    <h3>Autonomous Robots</h3>
+                    <p>Self-driving tractors, automated harvesters, and robotic weeders increase efficiency and reduce labor costs.</p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🏢</span>
+                    <h3>Vertical Farming</h3>
+                    <p>Indoor agriculture with controlled environments, LED lighting, and hydroponics for year-round sustainable production.</p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🧬</span>
+                    <h3>Biotechnology</h3>
+                    <p>Gene editing, crop improvement, disease resistance, and enhanced nutritional value through advanced genetics.</p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">📡</span>
+                    <h3>IoT Networks</h3>
+                    <p>Connected sensors and devices provide real-time monitoring of soil, weather, crops, and livestock conditions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IoT Sensors Demo -->
+        <section id="iot">
+            <h2>Real-Time IoT Sensor Network</h2>
+            <div class="sensors-demo">
+                <h3 style="text-align: center; margin-bottom: 1rem;">Live Farm Monitoring</h3>
+                <div class="sensor-grid" id="sensorGrid">
+                    <div class="sensor-box">
+                        <div class="icon">💧</div>
+                        <div class="sensor-value" id="moisture">45%</div>
+                        <div class="sensor-label">Soil Moisture</div>
+                    </div>
+                    <div class="sensor-box">
+                        <div class="icon">🌡</div>
+                        <div class="sensor-value" id="temperature">24°C</div>
+                        <div class="sensor-label">Temperature</div>
+                    </div>
+                    <div class="sensor-box">
+                        <div class="icon">💨</div>
+                        <div class="sensor-value" id="humidity">65%</div>
+                        <div class="sensor-label">Humidity</div>
+                    </div>
+                    <div class="sensor-box">
+                        <div class="icon">☀</div>
+                        <div class="sensor-value" id="light">850 lux</div>
+                        <div class="sensor-label">Light Intensity</div>
+                    </div>
+                    <div class="sensor-box">
+                        <div class="icon">🧪</div>
+                        <div class="sensor-value" id="ph">6.8</div>
+                        <div class="sensor-label">pH Level</div>
+                    </div>
+                    <div class="sensor-box">
+                        <div class="icon">🌱</div>
+                        <div class="sensor-value" id="nutrients">85%</div>
+                        <div class="sensor-label">Nutrients</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI & Machine Learning -->
+        <section id="ai">
+            <h2>AI & Machine Learning Applications</h2>
+            <div class="ai-features">
+                <div class="ai-feature">
+                    <h4>🔍 Crop Disease Detection</h4>
+                    <p>Computer vision identifies plant diseases early with 95%+ accuracy</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>📊 Yield Prediction</h4>
+                    <p>ML models forecast harvest yields based on weather and soil data</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>🌾 Weed Recognition</h4>
+                    <p>AI distinguishes crops from weeds for targeted herbicide application</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>🐄 Livestock Monitoring</h4>
+                    <p>Behavioral analysis detects health issues and optimizes feeding</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>☁ Weather Forecasting</h4>
+                    <p>Hyperlocal predictions help optimize planting and harvesting timing</p>
+                </div>
+                <div class="ai-feature">
+                    <h4>💧 Water Management</h4>
+                    <p>Smart systems predict irrigation needs and prevent water waste</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Automation Control Panel -->
+        <section id="automation">
+            <h2>Automated Farm Management</h2>
+            <div class="automation-demo">
+                <h3 style="margin-bottom: 1rem;">Control Panel</h3>
+                <p style="color: #666; margin-bottom: 1.5rem;">Toggle automated systems on/off</p>
+                <div class="control-panel">
+                    <div class="control-item">
+                        <div>
+                            <h4>Smart Irrigation</h4>
+                            <p style="color: #666; font-size: 0.9rem;">Auto water based on soil moisture</p>
+                        </div>
+                        <div class="toggle" onclick="toggleControl(this)"></div>
+                    </div>
+                    <div class="control-item">
+                        <div>
+                            <h4>Climate Control</h4>
+                            <p style="color: #666; font-size: 0.9rem;">Regulate greenhouse temperature</p>
+                        </div>
+                        <div class="toggle active" onclick="toggleControl(this)"></div>
+                    </div>
+                    <div class="control-item">
+                        <div>
+                            <h4>Fertilizer Dosing</h4>
+                            <p style="color: #666; font-size: 0.9rem;">Automated nutrient delivery</p>
+                        </div>
+                        <div class="toggle active" onclick="toggleControl(this)"></div>
+                    </div>
+                    <div class="control-item">
+                        <div>
+                            <h4>Pest Detection</h4>
+                            <p style="color: #666; font-size: 0.9rem;">AI-powered monitoring system</p>
+                        </div>
+                        <div class="toggle active" onclick="toggleControl(this)"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Analytics -->
+        <section id="analytics">
+            <h2>Crop Yield Analytics</h2>
+            <div class="chart-container">
+                <h3 style="margin-bottom: 1rem;">Monthly Production (tons)</h3>
+                <div class="chart" id="chart"></div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section>
+            <div class="benefits">
+                <h2>Impact of Modern Agriculture</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-number">30%</div>
+                        <p>Water Savings</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">25%</div>
+                        <p>Yield Increase</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">40%</div>
+                        <p>Cost Reduction</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">50%</div>
+                        <p>Less Pesticides</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+                function updateSensors() {
+            const moisture = document.getElementById('moisture');
+            const temperature = document.getElementById('temperature');
+            const humidity = document.getElementById('humidity');
+            const light = document.getElementById('light');
+            const ph = document.getElementById('ph');
+            const nutrients = document.getElementById('nutrients');
+
+            setInterval(() => {
+                moisture.textContent = (40 + Math.random() * 20).toFixed(0) + '%';
+                temperature.textContent = (20 + Math.random() * 10).toFixed(1) + '°C';
+                humidity.textContent = (60 + Math.random() * 20).toFixed(0) + '%';
+                light.textContent = (750 + Math.random() * 200).toFixed(0) + ' lux';
+                ph.textContent = (6.5 + Math.random() * 0.8).toFixed(1);
+                nutrients.textContent = (80 + Math.random() * 15).toFixed(0) + '%';
+            }, 2000);
+        }
+
+               function toggleControl(element) {
+            element.classList.toggle('active');
+        }
+        function createChart() {
+            const chart = document.getElementById('chart');
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+            const data = [45, 52, 48, 65, 58, 70];
+
+            months.forEach((month, index) => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                bar.style.height = (data[index] / 70 * 100) + '%';
+                
+                const value = document.createElement('div');
+                value.className = 'bar-value';
+                value.textContent = data[index];
+                
+                const label = document.createElement('div');
+                label.className = 'bar-label';
+                label.textContent = month;
+                
+                bar.appendChild(value);
+                bar.appendChild(label);
+                chart.appendChild(bar);
+
+                               setTimeout(() => {
+                    bar.style.height = (data[index] / 70 * 100) + '%';
+                }, index * 100);
+            });
+        }
+
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                                });
+                }
+            });
+        });
+
+                updateSensors();
+        createChart();
+
+                const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s';
+                }
+            });
+        });
+
+        document.querySelectorAll('.tech-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</div>
+</body>
+</html>
